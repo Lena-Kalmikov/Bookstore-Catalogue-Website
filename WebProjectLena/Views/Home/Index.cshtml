@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebProjectLena.Models.BookCommentJoin>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="HomeIndex" content="width=device-width" />
+        <title>Index</title>
+    </head>
+    <body>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-9">
+                <h2>Welcome To The Best Book Shop In Town!</h2>
+                <br>
+                <h3>Here are 2 of our most talked about books:</h3>
+                <div id="home_index_topBooks">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="col">Book Cover</th>
+                                <th class="col-2">Title</th>
+                                <th class="col">Description</th>
+                                <th class="col">Number of comments</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var book in Model) {
+                                <tr>
+                                    <td><img src="~/images/@book.ImageName"/></td>
+                                    <td>@book.Title</td>
+                                    <td>@book.Description</td>
+                                    <td id="home_index_count" class="text-center">@book.Count</td>
+                                </tr>
+                            }
+                        </tbody>
+	                </table>
+	            </div>
+            </div>
+        </div>
+    </body>
+</html>

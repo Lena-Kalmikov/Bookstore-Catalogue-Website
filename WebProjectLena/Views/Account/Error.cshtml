@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Error";
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="AccountError" content="width=device-width" />
+        <title>Create</title>
+    </head>
+    <body>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-7">
+                <h1>Error</h1>
+                <h3>Username or Password are incorrect, please try again</h3>
+                <br>
+                <form method="post" asp-controller="Account" asp-action="Login">
+	                <input type="submit" value="Try again" class="btn btn-outline-primary"/>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<WebProjectLena.Models.GenreModel>
+
+@{
+	ViewData["Title"] = "Admin Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="AdminIndex" content="width=device-width" />
+		<title>Index</title>
+	</head>
+	<body>
+		<div class="row d-flex justify-content-center">
+			<div class="col-lg-9">
+				<div class="row">
+					<div class="col-lg-8">
+						<h2>Add, edit and delete books from catalogue</h2>
+					</div>
+					<div class="col-lg-2">
+						<form method="post" asp-controller="Account" asp-action="Logout">
+							<input type="submit" value="Admin Logout" class="btn btn-outline-primary" style="margin-top:4px;"/>
+						</form>
+					</div>
+				</div>
+				<br>
+				<div>
+					<a asp-action="Create" id="admin_index_add_book" class="btn btn-outline-primary">Add New Book</a>
+				</div>
+				<div>
+					<h5>Filter by genre:
+						<select onchange="onGenreChange()" id="genreList" >
+							<option value="-1">All</option>
+							@foreach (var genre in Model) {
+								if (@genre.GenreId == @ViewBag.SelectedGenreId) {
+									<option value=@genre.GenreId selected="selected">@genre.GenreName</option>
+								}
+								else {
+									<option value=@genre.GenreId>@genre.GenreName</option>
+								}
+							}
+						</select>
+					</h5>
+				</div>
+				<br>
+				<div id="admin_books">
+					<table class="table">
+						<tbody>		
+							@foreach (var item in ViewBag.Books) {
+								<tr>
+									<td class="col-lg-1"><img src="~/images/@item.ImageName"/></td>
+									<td class="col-lg-2">@item.Title</td>
+									<td class="col-lg-2">
+										<a asp-action="Edit" asp-route-id="@item.BookId" id="tableBtn" class="btn btn-outline-primary">Edit</a>
+										<br>
+										<a asp-action="Delete" asp-route-id="@item.BookId" id="tableBtn" class="btn btn-outline-primary">Delete</a>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function onGenreChange() {
+				let e = document.getElementById("genreList");
+				window.location.href = "/Administrator/Index?GenreId=" + e.value
+			}
+		</script>
+	</body>
+</html>

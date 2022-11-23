@@ -1,0 +1,198 @@
+﻿@model IEnumerable<WebProjectLena.Models.GenreModel>
+
+@{
+    ViewData["Title"] = "Add Book";
+}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="AdminCreate" content="width=device-width" />
+        <title>Create</title>
+    </head>
+    <body>
+        <div class="row d-flex justify-content-center">
+		    <div class="col-lg-7">
+                <h2>Fill in the following details:</h2>
+                <br>
+	            <div id="admin_create_book">
+                    <form id="addBook">
+                        <div class="row lg-5">
+                            <div class="form-group col-lg-6">
+                                <label for="bookTitle">Title</label>
+                                <input type="text" class="form-control" id="bookTitle" placeholder="Enter book title" maxlength="70">
+                                <span id="titleError"></span>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="releaseYear">Release Year</label>
+                                <input type="text" class="form-control" id="releaseYear" placeholder="yyyy" maxlength="4">
+                                <span id="yearError"></span>
+                            </div>
+                        </div>
+                        <div class="row lg-5">
+                            <div class="form-group col-lg-6">
+                                <label for="bookAuthor">Author</label>
+                                <input type="text" class="form-control" id="bookAuthor" placeholder="Enter book author" maxlength="50">
+                                <span id="authorError"></span>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="genreListCreate">Genre</label>
+                                <select class="form-select" onchange="onGenreChange()" id="genreListCreate">
+                                    <option selected disabled value="">select</option>
+                                     @foreach (var genre in Model)
+                                     {
+                                         if (@genre.GenreId == @ViewBag.SelectedGenreId)
+                                         {
+                                             <option value=@genre.GenreId selected="selected">@genre.GenreName</option>
+                                         }
+                                         else
+                                         {
+                                             <option value=@genre.GenreId>@genre.GenreName</option>
+                                         }
+                                     }
+                                </select>
+                                <span id="genreError"></span>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-10">
+                            <label for="bookCover">Book cover</label>
+                            <input type="file" class="form-control" id="bookCover" accept="image/*">
+                            <span id="coverError"></span>
+                        </div>
+                        <div class="form-group col-lg-10">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" rows="6" placeholder="Enter description" maxlength="1500"></textarea>
+                            <span id="descriptionError"></span>
+                        </div>
+                        <div>
+                            <button onclick="onBookAdd()" id="admin_book" class="btn btn-outline-primary">Add Book</button>
+	                    </div>
+                    </form>
+                </div>
+	            <div>
+		            <a asp-action="Index" class="btn btn-outline-primary">Cancel</a>
+	            </div>
+            </div>
+        </div>
+
+        <script>
+            function onGenreChange() {
+                let e = document.getElementById("genreListCreate");
+            }
+        </script>
+
+	    <script>
+            //prevents form to refresh after submit
+            var form = document.getElementById("addBook");
+            function handleForm(event) { event.preventDefault(); }
+            form.addEventListener('submit', handleForm);
+
+		    function onBookAdd() {
+                var data = new FormData();
+            
+                //<---------title validation and adding to data---------->
+                var title = document.getElementById("bookTitle").value
+                var titleSpan = document.getElementById('titleError');
+                if (title == 0) {
+                    titleSpan.setAttribute("style", "color:red;");
+                    titleSpan.textContent = 'please provide a title';
+                    return;
+                }
+                else {
+                    titleSpan.setAttribute("style", "color:green;");
+                    titleSpan.textContent = "looks good!";
+                    data.append('Title', title)
+                }
+
+                //<------------release year validation and adding to data------------->
+                var year = document.getElementById("releaseYear").value
+                var currentYear = new Date().getFullYear();
+                var yearSpan = document.getElementById('yearError');
+                if (year == 0){
+                    yearSpan.setAttribute("style", "color:red;");
+                    yearSpan.textContent = 'please provide a year';
+                    return;
+                }
+                else if (!(year > 0 && year <= 2022)) {
+                    yearSpan.setAttribute("style", "color:red;");
+                    yearSpan.textContent = `must be a number between 0-${currentYear}`;
+                    return;
+                }
+                else {
+                    yearSpan.setAttribute("style", "color:green;");
+                    yearSpan.textContent = "looks good!";
+                    data.append('ReleaseYear', year)
+                }
+
+                //<----------author validation and adding to data----------->
+                var author = document.getElementById("bookAuthor").value
+                var authorSpan = document.getElementById('authorError');
+                if (author == 0) {
+                    authorSpan.setAttribute("style", "color:red;");
+                    authorSpan.textContent = 'please provide an author';
+                    return;
+                }
+                else {
+                    authorSpan.setAttribute("style", "color:green;")
+                    authorSpan.textContent = "looks good!";
+                    data.append('Author', author)
+                }
+
+                //<------------genre validation and adding to data-------------->
+                var genre = document.getElementById("genreListCreate").value
+                var genreSpan = document.getElementById('genreError');
+                if (genre == 0) {
+                    genreSpan.setAttribute("style", "color:red;");
+                    genreSpan.textContent = 'please choose a genre';
+                    return;
+                }
+                else {
+                    genreSpan.setAttribute("style", "color:green;")
+                    genreSpan.textContent = "looks good!";
+                    data.append('GenreId', genre)
+                }
+
+                //<---------cover validation and adding to data----------->
+                var fileUpload = document.getElementById("bookCover");
+                var coverSpan = document.getElementById("coverError");
+                if (fileUpload.value == "") {
+                    coverSpan.setAttribute("style", "color:red;");
+                    coverSpan.textContent = "please upload an image";
+                    return;
+                }
+                else {
+                    coverSpan.setAttribute("style", "color:green;")
+                    coverSpan.textContent = "looks good!";
+                    data.append('ImageName', fileUpload.files[0]);
+                }
+
+                //<-----------description validation and adding to data------------->
+                var description = document.getElementById("description").value
+                var descriptionSpan = document.getElementById('descriptionError');
+                if (description == 0) {
+                    descriptionSpan.setAttribute("style", "color:red;");
+                    descriptionSpan.textContent = 'please provide a description';
+                    return;
+                }
+                else {
+                    descriptionSpan.setAttribute("style", "color:green;")
+                    descriptionSpan.textContent = "looks good!";
+                    data.append('Description', description)
+                }
+
+                //<---sending all data info back to a function in the controller--->
+			    $.ajax({
+				    type: 'POST',
+				    url: '/Administrator/AddBookToDB',
+                    data: data,
+                    contentType: false,
+                    processData: false,
+				    success: function (data) {
+                        alert('New book was added successfully'),
+                        window.location.href = "/Administrator/Index"
+				    }
+			    });
+		    }
+	    </script>
+    </body>
+</html>

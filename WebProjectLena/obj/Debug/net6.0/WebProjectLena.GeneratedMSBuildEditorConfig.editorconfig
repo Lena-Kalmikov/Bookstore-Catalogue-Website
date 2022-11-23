@@ -1,0 +1,64 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebProjectLena
+build_property.RootNamespace = WebProjectLena
+build_property.ProjectDir = C:\Users\Lena\Desktop\לימודים\Sela\Projects\4th project - web using asp .net core mvc\WebProjectLena\WebProjectLena\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Lena\Desktop\לימודים\Sela\Projects\4th project - web using asp .net core mvc\WebProjectLena\WebProjectLena
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/Account/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/Administrator/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/Administrator/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/Administrator/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/Administrator/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYXRvclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/Catalogue/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ3VlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/Catalogue/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ3VlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lena/Desktop/לימודים/Sela/Projects/4th project - web using asp .net core mvc/WebProjectLena/WebProjectLena/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-nqegfboy9y
