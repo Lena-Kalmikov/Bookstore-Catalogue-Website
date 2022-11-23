@@ -9,6 +9,6 @@ Application:
 2.	In the catalogue page, you can filter books by genre, see book title and cover and click on 'details' for more details on that book.
 3.	In the details pages, you can see all the info about a book, and also all the comments about it. You can also add your own comment.
 4.	In the admin page, you have to login using these credentials:
-    UserName = AllPowerfullAdmin
-    Password = Qwe!@#123Rt$
+- UserName = AllPowerfullAdmin
+- Password = Qwe!@#123Rt$
 5.	After successful login, you can do CRUD operations here – create, read, update or delete a book.
