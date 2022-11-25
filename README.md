@@ -1,10 +1,10 @@
-## Website - Bookstore Catalogue
+## Bookstore Catalogue Website
 
 The goal of this project was to create a website for a bookstore catalogue using ASP.NET Core with MVC architecture. 
 
 - Back-end: C#.
-- Front-end: Java Script, HTML, CSS (using bootstrap).
-- Data base: SQL.
+- Front-end: JavaScript, HTML, CSS (using bootstrap).
+- Data base: MSSQL.
 
 Application:
 1.	Home page: See the two most popular books in the store – popularity is based on the number of comments per book.
