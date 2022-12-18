@@ -15,4 +15,4 @@ Application:
 - Password = Qwe!@#123Rt$
 5.	After successful login, do CRUD operations here – create, read, update or delete a book.
 
-![](https://github.com/Lena-Kalmikov/Bookstore-Catalogue-Website/blob/main/WebProject.gif)
+![](https://github.com/Lena-Kalmikov/Bookstore-Catalogue-Website/blob/main/WebProject.gif) 
